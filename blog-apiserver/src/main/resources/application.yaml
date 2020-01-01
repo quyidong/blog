@@ -1,0 +1,40 @@
+debug: true
+
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  profiles:
+    active:
+      - other
+      - production
+#      - kafka
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mysql://ark.vps.com:3306/blog?characterEncoding=UTF-8
+    username: root
+    password: Liuwu1211@
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+  data:
+    rest:
+      base-path: /api/v1
+      default-page-size: 15
+  dao:
+    exceptiontranslation:
+      enabled: true
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+  jackson:
+    time-zone: Asia/Shanghai
+    date-format: yyyy-MM-dd HH:mm:ss
+
+# 其他配置
